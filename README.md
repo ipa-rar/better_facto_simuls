@@ -16,8 +16,8 @@ python utils.py
 And a file called "basemap.jpg" will be created in the directory you executed
 from. This image corresponds to the created map with your given dimensions.
 #### Gazebo world
-- Manually created through Gazebo based on a properly scaled map image.
-- The image can be created with the python script "script_name_here.py".
+- Manually created through Gazebo based on a properly scaled map image (Image
+  created in the previous step or previously given).
 #### Map file creation of the Gazebo world through Neobotix's SLAM
 - Follow the instructions given by [neobotix slam official docs - here]().
 #### Heatmap through laser aggregation
