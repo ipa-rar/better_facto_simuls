@@ -48,5 +48,5 @@ from. This image corresponds to the created map with your given dimensions.
 #### Heatmap through laser aggregation
 - The LIDAR URDF is provided, and they are placed in the Gazebo world, by running
   the following ros instructions.
-- Use lidar aggregator given by [ragesh's repo - here]().
+- Use lidar aggregator given by [ragesh's repo - here](https://github.com/ipa-rar/laserscan_aggregator).
 

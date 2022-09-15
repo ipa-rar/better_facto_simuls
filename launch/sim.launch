@@ -4,13 +4,15 @@
   <!--set to the required robot type and world-->
   <arg name="robot_type" default="mpo_700"/>
   <arg name="robot_world" default="vfeld.world"/>
+  <!-- Spawn lidars -->
+  <arg name="lidars" default="true"/>
   <!-- neo_workshop vfeld -->
 
   <!--To launch RVIZ set the value to true-->
-  <arg name="rviz" default="true"/>
+  <arg name="rviz" default="false"/>
 
-  <!--To launch move base set the value to true-->
-  <arg name="autonomous_navigation" default="true"/>
+  <!--To launch gmapping set the value to true-->
+  <arg name="autonomous_navigation" default="false"/>
 
 <!---=================================================================================================================================================================-->
 
@@ -18,6 +20,11 @@
   <include file="$(find better_facto_simuls)/launch/sim_basic.launch">
 	<arg name="world_name_global" value="$(find better_facto_simuls)/worlds/$(arg robot_world)"/>
   </include>
+
+  <!-- Lidars -->
+  <group if="$(arg lidars)">
+      <include file="$(find better_facto_simuls)/launch/lidars.launch"/>
+  </group>
 
   <!-- Autonomous Navigation -->
   <group if="$(arg autonomous_navigation)">

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <group ns="node_1">
+    <arg name="x_pos" default="11.0"/>
+    <arg name="y_pos" default="0.3"/>
+    <arg name="z_pos" default="0.0"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find better_facto_simuls)/urdf/lidar.xacro" />
+
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_lidar_1"  args="-urdf -model node_1 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+  </group>
+
+  <group ns="node_2">
+    <arg name="x_pos" default="22.0"/>
+    <arg name="y_pos" default="0.3"/>
+    <arg name="z_pos" default="0.0"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find better_facto_simuls)/urdf/lidar.xacro" />
+
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_lidar_2"  args="-urdf -model node_2 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+  </group>
+
+  <group ns="node_3">
+    <arg name="x_pos" default="32.7"/>
+    <arg name="y_pos" default="0.3"/>
+    <arg name="z_pos" default="0.0"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find better_facto_simuls)/urdf/lidar.xacro" />
+
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_lidar_3"  args="-urdf -model node_3 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+  </group>
+
+  <group ns="node_4">
+    <arg name="x_pos" default="33.3"/>
+    <arg name="y_pos" default="-0.45"/>
+    <arg name="z_pos" default="0.0"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find better_facto_simuls)/urdf/lidar.xacro" />
+
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_lidar_4"  args="-urdf -model node_4 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+  </group>
+
+  <group ns="node_5">
+    <arg name="x_pos" default="33.3"/>
+    <arg name="y_pos" default="6.4"/>
+    <arg name="z_pos" default="0.0"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find better_facto_simuls)/urdf/lidar.xacro" />
+
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_lidar_5"  args="-urdf -model node_5 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+  </group>
+
+  <group ns="node_6">
+    <arg name="x_pos" default="33.3"/>
+    <arg name="y_pos" default="10.8"/>
+    <arg name="z_pos" default="0.0"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find better_facto_simuls)/urdf/lidar.xacro" />
+
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_lidar_6"  args="-urdf -model node_6 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+  </group>
+
+  <group ns="node_7">
+    <arg name="x_pos" default="32.7"/>
+    <arg name="y_pos" default="15.5"/>
+    <arg name="z_pos" default="0.0"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find better_facto_simuls)/urdf/lidar.xacro" />
+
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_lidar_7"  args="-urdf -model node_7 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+  </group>
+
+  <group ns="node_8">
+    <arg name="x_pos" default="22.0"/>
+    <arg name="y_pos" default="15.5"/>
+    <arg name="z_pos" default="0.0"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find better_facto_simuls)/urdf/lidar.xacro" />
+
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_lidar_8"  args="-urdf -model node_8 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+  </group>
+
+  <group ns="node_9">
+    <arg name="x_pos" default="14.7"/>
+    <arg name="y_pos" default="9.0"/>
+    <arg name="z_pos" default="0.0"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find better_facto_simuls)/urdf/lidar.xacro" />
+
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_lidar_9"  args="-urdf -model node_9 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+  </group>
+
+  <group ns="node_10">
+    <arg name="x_pos" default="11.0"/>
+    <arg name="y_pos" default="15.5"/>
+    <arg name="z_pos" default="0.0"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find better_facto_simuls)/urdf/lidar.xacro" />
+
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_lidar_10"  args="-urdf -model node_10 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+  </group>
+</launch>
