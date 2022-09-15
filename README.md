@@ -30,8 +30,21 @@ from. This image corresponds to the created map with your given dimensions.
   "package.xml" file.
 - The instructions are given officialy [here by Neobotix](https://neobotix-docs.de/ros/ros1/autonomous_navigation.html#mapping). 
   But I also provide them just below for our given data.
-  ```bash
-  ```
+  1. Build your catkin workspace if you haven't done so
+  2. Source ros and your catkin workspace
+  3. Launch the simulation with the following command, by default it runs gmapping
+    as well, so if you want to deactive it, set the argument "autonomous\_navigation"
+    to false.
+    ```bash
+    roslaunch better_facto_simuls sim.launch
+    ```
+  4. Move the robot with the keys of your keyboard. The possible ones are shown
+    in the terminal initially.
+  5. When you finish mapping the whole map with your robot, execute the following
+    command to save the map:
+    ```bash
+    rosrun map_server map_saver -f <your_map_name>
+    ```
 #### Heatmap through laser aggregation
 - The LIDAR URDF is provided, and they are placed in the Gazebo world, by running
   the following ros instructions.

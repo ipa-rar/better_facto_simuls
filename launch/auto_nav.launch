@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  
+  <!--To launch gmapping to create a map-->
+  <arg name="gmapping" value="true"/> 
+
+<!---=================================================================================================================================================================-->
+
+ <!--Navigation Package-->
+
+ <group if="$(arg gmapping)">
+ 	<include file="$(find neo_simulation)/config/mpo_700/gmapping/mpo_700_gmapping.launch"/>
+ </group>
+
+</launch>

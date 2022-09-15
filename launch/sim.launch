@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <!--set to the required robot type and world-->
+  <arg name="robot_type" default="mpo_700"/>
+  <arg name="robot_world" default="vfeld.world"/>
+  <!-- neo_workshop vfeld -->
+
+  <!--To launch RVIZ set the value to true-->
+  <arg name="rviz" default="true"/>
+
+  <!--To launch move base set the value to true-->
+  <arg name="autonomous_navigation" default="true"/>
+
+<!---=================================================================================================================================================================-->
+
+  <!-- Basic Simulation -->
+  <include file="$(find better_facto_simuls)/launch/sim_basic.launch">
+	<arg name="world_name_global" value="$(find better_facto_simuls)/worlds/$(arg robot_world)"/>
+  </include>
+
+  <!-- Autonomous Navigation -->
+  <group if="$(arg autonomous_navigation)">
+      <include file="$(find better_facto_simuls)/launch/auto_nav.launch"/>
+  </group>
+
+  <!-- RVIZ -->
+  <group if="$(arg rviz)">
+      <include file="$(find neo_simulation)/launch/$(arg robot_type)/$(arg robot_type)_rviz.launch"/>
+  </group>
+
+<!---=================================================================================================================================================================-->
+
+</launch>
