@@ -46,7 +46,13 @@ from. This image corresponds to the created map with your given dimensions.
     rosrun map_server map_saver -f <your_map_name>
     ```
 #### Heatmap through laser aggregation
-- The LIDAR URDF is provided, and they are placed in the Gazebo world, by running
-  the following ros instructions.
-- Use lidar aggregator given by [ragesh's repo - here](https://github.com/ipa-rar/laserscan_aggregator).
+- The LIDAR URDF is provided, and they are placed in the Gazebo world. The whole
+  simulation can be run by executing the same command as before for the map
+  generation. This time around just make sure to spawn the lidars by setting
+  their argument to true (It's activated by default)
+  ```bash
+  roslaunch better_facto_simuls sim.launch
+  ```
+- Use lidar aggregator given by [ragesh's repo - here](https://github.com/ipa-rar/laserscan_aggregator). Just aggregate the proper launch file in the sim.launch file, or
+  launch it in parallel.
 
