@@ -2,40 +2,41 @@
 <launch>
 
   <!--set to the required robot type and world-->
-  <arg name="robot_type" default="mpo_700"/>
-  <arg name="robot_world" default="vfeld.world"/>
+  <arg name="robot_type" default="mpo_700" />
+  <arg name="robot_world" default="vfeld.world" />
   <!-- Spawn lidars -->
-  <arg name="lidars" default="true"/>
+  <arg name="lidars" default="true" />
   <!-- neo_workshop vfeld -->
 
   <!--To launch RVIZ set the value to true-->
-  <arg name="rviz" default="false"/>
+  <arg name="rviz" default="true" />
 
   <!--To launch gmapping set the value to true-->
-  <arg name="autonomous_navigation" default="false"/>
+  <arg name="autonomous_navigation" default="false" />
 
-<!---=================================================================================================================================================================-->
+  <!---=================================================================================================================================================================-->
 
   <!-- Basic Simulation -->
   <include file="$(find better_facto_simuls)/launch/sim_basic.launch">
-	<arg name="world_name_global" value="$(find better_facto_simuls)/worlds/$(arg robot_world)"/>
+    <arg name="world_name_global" value="$(find better_facto_simuls)/worlds/$(arg robot_world)" />
   </include>
 
   <!-- Lidars -->
   <group if="$(arg lidars)">
-      <include file="$(find better_facto_simuls)/launch/lidars.launch"/>
+    <include file="$(find better_facto_simuls)/launch/lidars.launch" />
   </group>
 
   <!-- Autonomous Navigation -->
   <group if="$(arg autonomous_navigation)">
-      <include file="$(find better_facto_simuls)/launch/auto_nav.launch"/>
+    <include file="$(find better_facto_simuls)/launch/auto_nav.launch" />
   </group>
 
   <!-- RVIZ -->
   <group if="$(arg rviz)">
-      <include file="$(find neo_simulation)/launch/$(arg robot_type)/$(arg robot_type)_rviz.launch"/>
+    <arg name="rvizconfig" default="$(find better_facto_simuls)/rviz/rviz_config.rviz" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
   </group>
 
-<!---=================================================================================================================================================================-->
+  <!---=================================================================================================================================================================-->
 
 </launch>
